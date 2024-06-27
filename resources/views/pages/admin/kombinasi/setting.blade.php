@@ -50,10 +50,10 @@
                                     class="badge bg-warning text-decoration-none">
                                     <i class="fa-solid fa-pen-to-square"></i> Edit Perbandingan Kriteria
                                 </a>
-                                <a href="{{ route('kombinasi.updateBobot', $comparison->id) }}"
+                                <!-- <a href="{{ route('kombinasi.updateBobot', $comparison->id) }}"
                                     class="badge bg-warning text-decoration-none">
                                     <i class="fa-solid fa-pen-to-square"></i> Edit Bobot Kriteria
-                                </a>
+                                </a> -->
                                 <form action="{{ route('kombinasi.destroy', $comparison->id) }}" method="POST"
                                     class="d-inline">
                                     @method('delete')

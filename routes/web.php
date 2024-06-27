@@ -12,10 +12,13 @@ use App\Http\Controllers\Admin\RankingController;
 use App\Http\Controllers\Admin\SawController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SiswaController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PortalController;
 use App\Http\Controllers\FreeController;
+// use App\Http\Controllers\ResetPasswordController as ControllersResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Http\Request;
@@ -57,6 +60,12 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 Route::get('/login',  [LoginController::class, 'index'])->middleware('guest')->name('login.index');
 Route::post('/login',  [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'forgot_password'])->name('forgot-password');
+Route::post('/forgot-password-act', [ForgotPasswordController::class, 'forgot_password_act'])->name('forgot-password-act');
+
+Route::get('/validasi-forgot-password/{token}', [ForgotPasswordController::class, 'validasi_forgot_password'])->name('validasi-forgot-password');
+Route::post('/validasi-forgot-password-act', [ForgotPasswordController::class, 'validasi_forgot_password_act'])->name('validasi-forgot-password-act');
 
 Route::prefix('dashboard')
     // ->namespace('Admin')
@@ -138,19 +147,4 @@ Route::prefix('dashboard')
         Route::get('ranking/student/detailr/{criteria_analysis}', [RankingController::class, 'detailr'])
             ->name('rank.detailr');
     });
-    Route::post('/forgot-password', function (Request $request) {
-        $request->validate(['email' => 'required|email']);
-     
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
-     
-        return $status === Password::RESET_LINK_SENT
-                    ? back()->with(['status' => __($status)])
-                    : back()->withErrors(['email' => __($status)]);
-    })->middleware('guest')->name('password.email');
-    
-    Route::get('/reset-password/{token}', function (string $token) {
-        return view('auth.reset-password', ['token' => $token]);
-        // return 'berhasil kirim email';
-    })->middleware('guest')->name('password.reset');
+    Route::view('forgot_password', 'auth.reset_password')->name('password.reset');

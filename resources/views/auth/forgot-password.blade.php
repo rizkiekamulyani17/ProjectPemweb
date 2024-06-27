@@ -1,76 +1,77 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Forgot Password</title>
 
-    <link rel="stylesheet" href="{{ asset('style/assets/css/normalize.css') }}">
-    <link rel="stylesheet" href="{{ asset('style/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style/assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style/assets/css/themify-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('style/assets/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('style/assets/css/cs-skin-elastic.css') }}">
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="{{ asset('style/assets/scss/style.css') }}">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="{{ asset('lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
 </head>
 
-<body class="bg-blue">
-    <div class="container">
-        <div class="login-content">
-            
-            
-        <div class="login-form">
-                @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors -> all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="{{ route('login') }}" class="h1"><b>Admin</b>LTE</a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Masukkan E-Mail kamu yang terdaftar</p>
 
-                </div>
-                @endif
-                @if(session()->has('status'))
-                <div class="alert alert-success">
-                    {{session()->get('status')}}
-                </div>
-                @endif
-
-                
-            
-                <form action="{{ route('password.email')}}" method="POST">
-                    <h3>Forgot Password</h3>
+                <form action="{{ route('forgot-password-act') }}" method="post">
                     @csrf
-                    <div class="form-group">
-                        <label>email</label>
-                        <input type="email" class="form-control" name="email"
-                            placeholder="email">
+                    <div class="input-group mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">submit</button>
+                    @error('email')
+                        <small>{{ $message }}</small>
+                    @enderror
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
                 </form>
             </div>
+            <!-- /.card-body -->
         </div>
+        <!-- /.card -->
     </div>
-    <script src="{{ asset('style/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
-    <script src="{{ asset('style/assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('style/assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('style/assets/js/main.js') }}"></script>
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if ($message = Session::get('success'))
+        <script>
+            Swal.fire('{{ $message }}');
+        </script>
+    @endif
+
+    @if ($message = Session::get('failed'))
+        <script>
+            Swal.fire('{{ $message }}');
+        </script>
+    @endif
 </body>
 
 </html>

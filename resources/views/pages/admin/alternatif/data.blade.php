@@ -181,12 +181,12 @@
                             id="{{ str_replace(' ', '', $criteria->nama_kriteria) }}" name="alternative_value[]"
                             required>
                             <option disabled selected value="">-- Pilih Sub Kriteria --</option>
-                            <option value="1">(Skala 1) - {{ $criteria->skala1 }}</option>
-                            <option value="2">(Skala 2) - {{ $criteria->skala2 }}</option>
-                            <option value="3">(Skala 3) - {{ $criteria->skala3 }}</option>
-                            <option value="4">(Skala 4) - {{ $criteria->skala4 }}</option>
-                            <option value="5">(Skala 5) - {{ $criteria->skala5 }}</option>
-                            <option value="5">(Skala 6) - {{ $criteria->skala6 }}</option>
+                            <!-- <option value="1">(Skala 1) - {{ $criteria->skala1 }}</option> -->
+                            <option value="2">(Skala 1) - {{ $criteria->skala2 }}</option>
+                            <option value="3">(Skala 2) - {{ $criteria->skala3 }}</option>
+                            <option value="4">(Skala 3) - {{ $criteria->skala4 }}</option>
+                            <option value="5">(Skala 4) - {{ $criteria->skala5 }}</option>
+                            <option value="5">(Skala 5) - {{ $criteria->skala6 }}</option>
                         </select>
                         @error('alternative_value')
                         <div class="invalid-feedback">

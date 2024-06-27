@@ -41,17 +41,17 @@
         <select class="form-select @error('alternative_value') 'is-invalid' : '' @enderror"
             id="{{ str_replace(' ', '', $value->criteria->nama_kriteria) }}" name="alternative_value[]" required>
             <option disabled value="">-- Pilih Sub Kriteria --</option>
-            <option value="1" {{ $value->alternative_value == 1 ? 'selected' : '' }}>(Skala 1) -
-                {{ $value->criteria->skala1 }}</option>
-            <option value="2" {{ $value->alternative_value == 2 ? 'selected' : '' }}>(Skala 2) -
+            <!-- <option value="1" {{ $value->alternative_value == 1 ? 'selected' : '' }}>(Skala 1) -
+                {{ $value->criteria->skala1 }}</option> -->
+            <option value="2" {{ $value->alternative_value == 2 ? 'selected' : '' }}>(Skala 1) -
                 {{ $value->criteria->skala2 }}</option>
-            <option value="3" {{ $value->alternative_value == 3 ? 'selected' : '' }}>(Skala 3) -
+            <option value="3" {{ $value->alternative_value == 3 ? 'selected' : '' }}>(Skala 2) -
                 {{ $value->criteria->skala3 }}</option>
-            <option value="4" {{ $value->alternative_value == 4 ? 'selected' : '' }}>(Skala 4) -
+            <option value="4" {{ $value->alternative_value == 4 ? 'selected' : '' }}>(Skala 3) -
                 {{ $value->criteria->skala4 }}</option>
-            <option value="5" {{ $value->alternative_value == 5 ? 'selected' : '' }}>(Skala 5) -
+            <option value="5" {{ $value->alternative_value == 5 ? 'selected' : '' }}>(Skala 4) -
                 {{ $value->criteria->skala5 }}</option>
-            <option value="6" {{ $value->alternative_value == 6 ? 'selected' : '' }}>(Skala 6) -
+            <option value="6" {{ $value->alternative_value == 6 ? 'selected' : '' }}>(Skala 5) -
                 {{ $value->criteria->skala6 }}</option>
         </select>
         @error('alternative_value')

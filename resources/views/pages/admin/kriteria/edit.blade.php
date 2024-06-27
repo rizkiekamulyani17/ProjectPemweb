@@ -86,16 +86,7 @@
                 </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="skala6" class="form-label">Sub Kriteria Skala 6</label>
-                <input type="text" class="form-control @error('skala6') is-invalid @enderror" id="skala5"
-                    name="skala6" value="{{ old('skala6', $criteria->skala6) }}" autofocus required>
-                @error('skala6')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
+           
             <button type="submit" class="btn btn-primary mb-3">Simpan Perubahan</button>
             <a href="/dashboard/kriteria" class="btn btn-danger mb-3">Cancel</a>
         </form>

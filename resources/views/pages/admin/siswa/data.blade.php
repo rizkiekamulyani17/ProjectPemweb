@@ -80,13 +80,14 @@
                                         <td scope="row" class="text-center">
                                             {{ ($siswas->currentpage() - 1) * $siswas->perpage() + $loop->index + 1 }}
                                         </td>
-                                        <td class="text-center">
+                                        <td>{{ $siswa->nis }}</td>
+                                        <!-- <td class="text-center">
                                             @if($siswa->nis == "")
                                             
                                             @else
                                             {{ Str::ucfirst($siswa->nis) }}
                                             @endif
-                                        </td>
+                                        </td> -->
                                         <td class="text-center">
                                             @if($siswa->nama_siswa == "")
                                             

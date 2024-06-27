@@ -8,8 +8,8 @@
         @csrf
          {{-- nis  siswa --}}
          <div class="mb-3">
-            <label for="nis" class="form-label">NIS</label>
-            <input type="text" class="form-control @error('nis') is-invalid @enderror" id="nis" name="nis" value="{{ old('nis') }}" autofocus required placeholder="NIS">
+            <label for="nis" class="form-label">NISN</label>
+            <input type="text" class="form-control @error('nis') is-invalid @enderror" id="nis" name="nis" value="{{ old('nis') }}" autofocus required placeholder="nis">
             @error('nis')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -27,7 +27,7 @@
             @enderror
         </div>
          {{-- kelas_id --}}
-         <div class="mb-3">
+         <!-- <div class="mb-3">
             <label for="kelas_id" class="form-label">Kelas</label>
             <input type="text" class="form-control @error('kelas_id') is-invalid @enderror" id="kelas_id" name="kelas_id" value="{{ old('kelas_id') }}" autofocus required placeholder="kelas">
             @error('kelas_id')
@@ -35,11 +35,55 @@
                     {{ $message }}
                 </div>
             @enderror
+        </div> -->
+        <div class="mb-3">
+            <label for="kelas_id" class="form-label">Kelas</label>
+            <select class="form-select @error('kelas_id') is-invalid @enderror" id="kelas_id" name="kelas_id" required>
+                <option value="" disabled selected>Pilih kelas</option>
+                @foreach ($kelases as $kelas)
+                    @if (old('kelas_id') == $kelas->id)
+                        <option value="{{ $kelas->id }}" selected>{{ $kelas->kelas_name }}</option>
+                    @else
+                        <option value="{{ $kelas->id }}">{{ $kelas->kelas_name }}</option>
+                    @endif
+                @endforeach
+            </select>
+
+            @error('kelas_id')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
          {{-- jenis_kelamin --}}
-         <div class="mb-3">
+         <!-- <div class="mb-3">
             <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
             <input type="text" class="form-control @error('jenis_kelamin') is-invalid @enderror" id="jenis_kelamin" name="jenis_kelamin" value="{{ old('jenis_kelamin') }}" autofocus required placeholder="Jenis Kelamin">
+            @error('jenis_kelamin')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div> -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Jenis Kelamin</label>
+            <div class="d-flex">
+                <div class="form-check col-lg-6">
+                    <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin"
+                        id="jenis_kelamin" value="Laki-laki">
+                    <label class="form-check-label" for="jenis_kelamin1">
+                        Laki-laki
+                    </label>
+                </div>
+                <div class="form-check col-lg-6">
+                    <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin"
+                        id="jenis_kelamin" value="Perempuan">
+                    <label class="form-check-label" for="jenis_kelamin2">
+                        Perempuan
+                    </label>
+                </div>
+            </div>
+
             @error('jenis_kelamin')
                 <div class="invalid-feedback">
                     {{ $message }}

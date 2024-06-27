@@ -3121,7 +3121,7 @@ textarea.is-valid.datatable-input {
 .was-validated .datatable-selector:valid:focus,
 .form-select.is-valid:focus,
 .is-valid.datatable-selector:focus {
-    border-color: #198754;
+    border-color: #341987;
     box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
@@ -3132,12 +3132,12 @@ textarea.is-valid.datatable-input {
 
 .was-validated .form-check-input:valid,
 .form-check-input.is-valid {
-    border-color: #198754;
+    border-color: #341987;
 }
 
 .was-validated .form-check-input:valid:checked,
 .form-check-input.is-valid:checked {
-    background-color: #198754;
+    background-color: #341987;
 }
 
 .was-validated .form-check-input:valid:focus,
@@ -3147,7 +3147,7 @@ textarea.is-valid.datatable-input {
 
 .was-validated .form-check-input:valid~.form-check-label,
 .form-check-input.is-valid~.form-check-label {
-    color: #198754;
+    color: #341987;
 }
 
 .form-check-inline .form-check-input~.valid-feedback {
@@ -3393,19 +3393,19 @@ fieldset:disabled .btn {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #0d6efd;
-    --bs-btn-border-color: #0d6efd;
+    --bs-btn-bg: #d836db;
+    --bs-btn-border-color: #d836db;
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #0b5ed7;
-    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-hover-bg: #d836db;
+    --bs-btn-hover-border-color: #d836db;
     --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #0a58ca;
-    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-bg: #d836db;
+    --bs-btn-active-border-color: #d836db;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #0d6efd;
-    --bs-btn-disabled-border-color: #0d6efd;
+    --bs-btn-disabled-bg: #d836db;
+    --bs-btn-disabled-border-color: #d836db;
 }
 
 .btn-secondary {
