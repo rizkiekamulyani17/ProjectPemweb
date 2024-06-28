@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wisatas', function (Blueprint $table) {
+        Schema::create('siswas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jenis_id')->constrained()->cascadeOnDelete();
-            $table->string('nama_wisata');
-            $table->string('lokasi_maps');
-            $table->string('link_foto');
-            $table->string('keterangan');
-            $table->string('fasilitas');
-            $table->integer('biaya');
-            $table->string('situs');
+            $table->string('nis');
+            $table->string('nama_siswa');
+            $table->foreignId('kelas_id')->constrained()->cascadeOnDelete();
+            $table->string('jenis_kelamin');
+            $table->string('agama');
+            $table->string('alamat');
             $table->timestamps();
         });
     }

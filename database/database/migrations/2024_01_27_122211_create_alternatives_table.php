@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('alternatives', function (Blueprint $table) {
             $table->id();
             $table->foreignId('criteria_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('wisata_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('jenis_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('siswa_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('kelas_id')->constrained()->cascadeOnDelete();
             $table->decimal('alternative_value', 10, 1);
             $table->timestamps();
         });
