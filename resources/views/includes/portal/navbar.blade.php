@@ -3,18 +3,18 @@
     <div class="container-fluid d-flex align-items-center justify-content-between">
         
        
-                <nav>
+                <!-- <nav>
                 <a class="btn-getstarted scrollto text-center" href="{{ url('/') }}" style="width: 4.5cm">Home</a>
-                    <!-- <a class="nav-link scrollto" href="{{ url('/') }}">Home</a> -->
-                </nav>
+                   <a class="nav-link scrollto" href="{{ url('/') }}">Home</a> 
+                </nav> -->
                 <nav>
-                <a class="btn-getstarted scrollto text-center" href="{{ url('#about') }}"style="width: 4.5cm">About</a>
-                    <!-- <a class="nav-link scrollto" href="{{ url('#about') }}">About</a> -->
-                </nav>
+                <!-- <a class="btn-getstarted scrollto text-center" href="{{ route('free.perhitungan') }}"style="width: 4.5cm">About</a>
+                    <a class="nav-link scrollto" href="{{ url('#about') }}">About</a> 
+                </nav> -->
                 <nav>
-                <a class="btn-getstarted scrollto text-center" href="{{ url('#faq') }}"style="width: 4.5cm">FAQ</a>
-                    <!-- <a class="nav-link scrollto" href="{{ url('#faq') }}">FAQ</a> -->
-                </nav>
+                <!-- <a class="btn-getstarted scrollto text-center" href="{{ url('#faq') }}"style="width: 4.5cm">FAQ</a>
+                    <a class="nav-link scrollto" href="{{ url('#faq') }}">FAQ</a>
+                </nav> -->
                 {{-- <li>
                     <a class="nav-link scrollto" href="{{ url('#comment') }}">Comment</a>
                 </li> --}}

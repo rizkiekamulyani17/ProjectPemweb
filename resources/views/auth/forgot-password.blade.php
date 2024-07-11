@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Forgot Password</title>
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="{{ asset('lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css') }}">
-</head>
-
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
-            <div class="card-header text-center">
-                <a href="{{ route('login') }}" class="h1"><b>Admin</b>LTE</a>
-            </div>
-            <div class="card-body">
+@extends('layouts.login')
+@section('title')
+    Forgot Pasword
+@endsection
+@section('content')
+    <!-- ======= main ======= -->
+    <section class="my-login-page">
+        <div class="container form-Bg">
+            <div class="row justify-content-md-center">
+                <div class="card-wrapper">
+                    <div class="brand">
+                        <img src="{{ url('frontend/images/lock.png') }}" alt="logo" />
+                    </div>
+                    <div class="card fat">
+                    <div class="card-body">
                 <p class="login-box-msg">Masukkan E-Mail kamu yang terdaftar</p>
 
                 <form action="{{ route('forgot-password-act') }}" method="post">
@@ -48,10 +36,16 @@
                     </div>
                 </form>
             </div>
+            </div>
             <!-- /.card-body -->
+                    <div class="footer">
+                        <p>Copyright &copy;
+                            {{ now()->year }} &mdash; SPK</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /.card -->
-    </div>
+    </section>
     <!-- /.login-box -->
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
@@ -72,6 +66,4 @@
             Swal.fire('{{ $message }}');
         </script>
     @endif
-</body>
-
-</html>
+@endsection

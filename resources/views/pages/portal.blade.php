@@ -14,7 +14,7 @@ Portal
           <div class="d-flex">
                     @auth
                     @else
-                    <a href="{{ route('free.index') }}" class="btn-get-started scrollto">Perhitungan SPK</a>
+                    <a href="{{ route('free.perhitungan') }}" class="btn-get-started scrollto">HASIL SISWA TELADAN</a>
                     @endauth
                 </div>
             </div>
@@ -70,58 +70,19 @@ Portal
         <!-- End Featured Services Section -->
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>About Us</h2>
-                    <p>
-                        Selamat datang di platform online yang bertujuan untuk memberikan solusi inovatif dalam
-                        pemilihan Siswa Teladan menggunakan Sistem Pendukung Keputusan (SPK).
-                    </p>
-                </div>
-                <div class="row g-4 g-lg-5 align-items-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-lg-5">
-                        <div class="about-img">
-                            <img src="{{ url('frontend/images/about.png') }}" class="img-fluid" alt="" />
+        <div class="collapse {{ Request::is('spk/ahp*') ? 'show' : '' }}" id="masterDataCollapse2"
+                    data-bs-parent="#sidenavAccordion">
+                    <a class="nav-link {{ Request::is('spk/ahp*') ? 'active' : '' }} child"
+                        href="{{ route('free.perhitungan') }}">
+                        <div class="sb-nav-link-icon col-1">
+                            <i class="fas"></i>
                         </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <!-- Tab Content -->
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active">
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>Objektivitas dalam Seleksi</h4>
-                                </div>
-                                <p>
-                                    Dengan menggunakan SPK, kriteria dan bobot yang telah ditentukan secara jelas dapat
-                                    diterapkan pada semua Data Siswa.
-                                </p>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>Efisiensi dan Waktu</h4>
-                                </div>
-                                <p>
-                                    Penggunaan website untuk pemilihan Siswa Teladan dengan menggunakan SPK dapat
-                                    meningkatkan efisiensi dan menghemat waktu.
-                                </p>
-                                <div class="d-flex align-items-center mt-4">
-                                    <i class="bi bi-check2"></i>
-                                    <h4>Analisis yang Lebih Mendalam</h4>
-                                </div>
-                                <p>
-                                    Melalui website ini, pengguna dapat mengakses dan menganalisis data siswa
-                                    secara lebih mendalam.
-                                </p>
-                            </div>
-                            <!-- End Tab 1 Content -->
-                        </div>
-                    </div>
+                        
+                    </a>
                 </div>
-            </div>
-        </section>
         <!-- End About Section -->
         <!-- ======= F.A.Q Section ======= -->
-        <section id="faq" class="faq">
+        <!-- <section id="faq" class="faq">
             <div class="container" data-aos="fade-up">
                 <div class="row gy-4">
                     <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1">
@@ -146,67 +107,16 @@ Portal
                                 </div>
                             </div>
                             <!-- # Faq item-->
-                            <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq-content-2">
-                                        <i class="bi bi-question-circle question-icon"></i>
-                                        Bagaimana SPK bekerja?
-                                    </button>
-                                </h3>
-                                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                                    <div class="accordion-body">
-                                        SPK bekerja dengan mengumpulkan data yang relevan, menganalisisnya menggunakan
-                                        metode-metode atau model yang telah ditentukan, dan menghasilkan rekomendasi
-                                        berdasarkan hasil analisis.
-                                    </div>
-                                </div>
-                            </div>
+                            <!--  -->
                             <!-- # Faq item-->
-                            <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq-content-3">
-                                        <i class="bi bi-question-circle question-icon"></i>
-                                        Apa manfaat menggunakan SPK dalam pengambilan keputusan?
-                                    </button>
-                                </h3>
-                                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                                    <div class="accordion-body">
-                                        Penggunaan SPK dapat membantu mengurangi ketidakpastian, meningkatkan efisiensi,
-                                        meningkatkan akurasi, mendukung pengambilan keputusan berbasis data, dan
-                                        memberikan panduan dalam situasi yang kompleks.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- # Faq item-->
-                            <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq-content-4">
-                                        <i class="bi bi-question-circle question-icon"></i>
-                                        Apakah dibutuhkan keahlian khusus untuk menggunakan SPK?
-                                    </button>
-                                </h3>
-                                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                                    <div class="accordion-body">
-                                        <i class="bi bi-question-circle question-icon"></i>
-                                        Penggunaan SPK biasanya membutuhkan pemahaman tentang konsep dasar SPK,
-                                        pemodelan masalah, analisis data, dan penggunaan perangkat lunak atau alat yang
-                                        spesifik. Namun, banyak perangkat lunak SPK yang telah dirancang untuk digunakan
-                                        oleh pengguna tanpa keahlian khusus.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            
                     <!-- <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
                         style="background-image: url('{{ url('.jpg') }}')"> 
                         &nbsp;
                     </div> -->
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End F.A.Q Section -->
         <!-- ======= Comment Section ======= -->
         {{-- <section id="comment" class="comment">

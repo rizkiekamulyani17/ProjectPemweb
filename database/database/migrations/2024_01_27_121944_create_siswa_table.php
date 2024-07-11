@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('jenis_kelamin');
             $table->string('agama');
             $table->string('alamat');
+            $table->string('validasi');
+            
             $table->timestamps();
+
         });
     }
 

@@ -45,6 +45,7 @@ Route::get('/spk/data/alternatif', [FreeController::class, 'alternatif'])->name(
 
 Route::get('/spk/perhitungan', [FreeController::class, 'awal'])->name('free.perhitungan');
 
+
 Route::get('/spk/perhitungan/kombinasi/{criteria_analysis}', [FreeController::class, 'resultKombinasi'])->name('perhitungan.kombinasi');
 Route::get('/spk/perhitungan/kombinasi/detail/{criteria_analysis}', [FreeController::class, 'detailKombinasi'])->name('perhitungan.kombinasiDetail');
 

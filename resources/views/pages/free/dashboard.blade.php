@@ -1,4 +1,4 @@
-@extends('layouts.free')
+<!-- @extends('layouts.free')
 @section('content')
 <main>
     <div class="container-fluid px-4">
@@ -33,4 +33,4 @@
         }?>
     </div>
 </main>
-@endsection
+@endsection -->

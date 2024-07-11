@@ -16,7 +16,7 @@
             </ol>
         </div>
     </div>
-    <div class="card mb-4">
+    <!-- <div class="card mb-4">
         <div class="card-body table-responsive">
             <div class="d-sm-flex align-items-center">
                 <div class="mb-4">
@@ -68,9 +68,9 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> -->
     {{-- Normalisasi dan prioritas --}}
-    <div class="card mb-4">
+    <!-- <div class="card mb-4">
         <div class="card-body table-responsive">
             <div class="d-sm-flex align-items-center">
                 <div class="mb-4">
@@ -120,9 +120,9 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> -->
     {{-- Matriks perkalian --}}
-    <div class="card mb-4">
+    <!-- <div class="card mb-4">
         <div class="card-body table-responsive">
             <div class="d-sm-flex align-items-center">
                 <div class="mb-4">
@@ -216,9 +216,9 @@
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
             {{-- Final Result --}}
-            <div class="d-lg-flex justify-content-center">
+            <!-- <div class="d-lg-flex justify-content-center">
                 <div class="col-12 col-lg-6">
                     <table class="table table-bordered text-center">
                         <tbody>
@@ -275,9 +275,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     {{-- Menentukan Eigen Vector Alternatif di Setiap Alternatif --}}
-    <div class="card mb-4">
+    <!-- <div class="card mb-4">
         <div class="card-body table-responsive">
             <div class="d-sm-flex align-items-center">
                 <div class="mb-4">
@@ -346,7 +346,7 @@
             </div>
         </div>
     </div>
-
+ -->
 
 
     <!-- <div class="card mb-4">
@@ -463,7 +463,7 @@
                     <h4 class="mb-0 text-gray-800">Ranking</h4>
                 </div>
             </div>
-            <table class="table table-bordered table-condensed">
+            <!-- <table class="table table-bordered table-condensed">
                 <tbody>
                     <tr>
                         <td scope="col" class="fw-bold text-center" style="width:11%">Kriteria</td>
@@ -480,15 +480,15 @@
                         @endforeach
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
             <table id="datatablesSimple" class="table table-bordered">
                 <thead class="bg-primary align-middle text-center text-white">
                     <tr>
                         <th scope="col" class="text-center">Nama Alternatif</th>
                         <th scope="col" class="text-center">Data Kelas</th>
-                        @foreach ($dividers as $divider)
+                        <!-- @foreach ($dividers as $divider)
                             <th scope="col">Hitung {{ $divider['nama_kriteria'] }}</th>
-                        @endforeach
+                        @endforeach -->
                         <th>Jumlah</th>
                         <th>Ranking</th>
                     </tr>
@@ -567,11 +567,11 @@
                                 <td class="text-center">
                                     {{ $data['kelas_name'] }}
                                 </td>
-                                @foreach ($dividers as $key => $divider)
+                                <!-- @foreach ($dividers as $key => $divider)
                                     <td class="text-center">
                                         {{ round($data['nilai_kriteria'][$key], 3) }}
                                     </td>
-                                @endforeach
+                                @endforeach -->
                                 <td class="text-center">{{ round($data['total_bobot'], 3) }}</td>
                                 <td class="text-center">{{ $ranking++ }}</td>
                             </tr>

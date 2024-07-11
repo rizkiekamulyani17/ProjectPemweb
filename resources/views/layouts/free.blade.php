@@ -15,10 +15,7 @@
 
 <body class="sb-nav-fixed" style="font-family: 'Times New Roman', Times, serif">
     {{-- navbar --}}
-    @include('includes.free.navbar')
-    <div id="layoutSidenav">
-        {{-- sidenav --}}
-        @include('includes.free.sidenav')
+   
         {{-- content --}}
         <div id="layoutSidenav_content">
             {{-- content --}}
